@@ -2,9 +2,7 @@
 #include "pa2Functions.h"
 using namespace std;
 
-int ENTRIES;
-
-long double factorial(int n){
+int factorial(int n){
     if (n == 0) {
         return 1;
     }
@@ -13,3 +11,12 @@ long double factorial(int n){
     }
 }
 
+int fibonacci(int index){
+    if (index == 0){
+        return 0;
+    } else if (index == 1){
+        return 1;
+    } else {
+        return fibonacci(index - 1) + fibonacci(index - 2);
+    }
+}

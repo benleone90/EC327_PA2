@@ -1,3 +1,5 @@
-extern const int ENTRIES = 10;
+extern const int ENTRIES;
 
-long double factorial(int n);
+int factorial(int);
+
+int fibonacci(int);

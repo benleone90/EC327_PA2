@@ -2,7 +2,7 @@
 #include "pa2Functions.h"
 using namespace std;
 
-int ENTRIES;
+const int ENTRIES = 10;
 
 int run = 1;
 int main()
@@ -21,6 +21,14 @@ int main()
         cout << "Please enter command parameters: ";
         cin >> fact;
         cout << "Factorial of " << fact << " is " << factorial(fact) << endl;
+        break;
+
+    case 'b':
+    case 'B':
+        int index;
+        cout << "Please enter command parameters: ";
+        cin >> index;
+        cout << "Fibonacci number at index " << index << " is " << fibonacci(index) << endl;
         break;
 
     case 'q':
