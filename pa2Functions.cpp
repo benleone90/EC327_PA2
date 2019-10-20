@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "pa2Functions.h"
 using namespace std;
 
@@ -20,3 +21,7 @@ int fibonacci(int index){
         return fibonacci(index - 1) + fibonacci(index - 2);
     }
 }
+
+// double findSqrtValue(double){
+
+// }

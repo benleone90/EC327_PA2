@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "pa2Functions.h"
 using namespace std;
 
@@ -18,7 +19,7 @@ int main()
     case 'f':
     case 'F':
         int fact;
-        cout << "Please enter command parameters: ";
+        cout << "Please enter command parameters (factorial): ";
         cin >> fact;
         cout << "Factorial of " << fact << " is " << factorial(fact) << endl;
         break;
@@ -26,9 +27,19 @@ int main()
     case 'b':
     case 'B':
         int index;
-        cout << "Please enter command parameters: ";
+        cout << "Please enter command parameters (index): ";
         cin >> index;
         cout << "Fibonacci number at index " << index << " is " << fibonacci(index) << endl;
+        break;
+
+    case 'r':
+    case 'R':
+        double first;
+        double last;
+        double delta;
+        cout << "Please enter command parameters (sqrt first, last, delta): ";
+        cin >> first >> last >> delta;
+        cout << first << last << delta;
         break;
 
     case 'q':
