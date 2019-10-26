@@ -3,6 +3,11 @@
 #include "pa2Functions.h"
 using namespace std;
 
+void initialize(){
+    cout << "EC327: Introduction to Software Engineering\nFall 2019\nProgramming Assignment 2\nValue of Entries is: " << ENTRIES << endl;
+    cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+}
+
 int factorial(int n){
     if (n == 0) {
         return 1;
@@ -22,6 +27,18 @@ int fibonacci(int index){
     }
 }
 
-// double findSqrtValue(double){
-
-// }
+double findSqrtValue(double first, double last, double delta){
+    if (delta <= 0 || first > last){
+        cout << "No computation needed." << endl;
+    } else {
+        for (int i = 0; i < ENTRIES; i++){
+            double calc = first + (delta * i);
+            if (calc <= last)            {    
+                cout << sqrt(calc) << endl;
+            } else {
+                break;
+            }
+        }
+    }
+    return 0;
+ }

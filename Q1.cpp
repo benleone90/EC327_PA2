@@ -5,10 +5,11 @@ using namespace std;
 
 const int ENTRIES = 10;
 
-int run = 1;
+bool run = true;
 int main()
 {
-    while (run){    
+    initialize();
+    while (run){
     char command;
     
     cout << "Please enter command code: ";
@@ -27,7 +28,7 @@ int main()
     case 'b':
     case 'B':
         int index;
-        cout << "Please enter command parameters (index): ";
+        cout << "Please enter command parameters (Fibonacci: index): ";
         cin >> index;
         cout << "Fibonacci number at index " << index << " is " << fibonacci(index) << endl;
         break;
@@ -37,15 +38,16 @@ int main()
         double first;
         double last;
         double delta;
-        cout << "Please enter command parameters (sqrt first, last, delta): ";
+        cout << "Please enter command parameters (sqrt: first, last, delta): " << endl;
         cin >> first >> last >> delta;
-        cout << first << last << delta;
+        cout << "Square Root Values: " << endl;
+        findSqrtValue(first, last, delta);
         break;
 
     case 'q':
     case 'Q':
         cout << "Thank you for using this awesome program! It's an A+ ;)";
-        run = 0;
+        run = false;
         break;
 
     default:
