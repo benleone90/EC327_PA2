@@ -33,12 +33,28 @@ double findSqrtValue(double first, double last, double delta){
     } else {
         for (int i = 0; i < ENTRIES; i++){
             double calc = first + (delta * i);
-            if (calc <= last)            {    
+            if (calc <= last){    
                 cout << sqrt(calc) << endl;
             } else {
                 break;
             }
         }
     }
+    return 0;
+ }
+
+ double areaSquare (double first, double last, double delta){
+     if (delta <= 0 || first > last){
+         cout << "No computation needed." << endl;
+     } else {
+         for (int i = 0; i < ENTRIES; i++){
+            double calc = first + (delta * i);
+            if (calc <= last){
+                cout << (calc * calc) << endl;
+            } else {
+                break;
+            }
+         }
+     }
     return 0;
  }

@@ -11,4 +11,6 @@ int fibonacci(int);
 
 double findSqrtValue(double, double, double);
 
+double areaSquare (double, double, double);
+
 #endif

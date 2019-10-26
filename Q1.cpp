@@ -35,13 +35,24 @@ int main()
 
     case 'r':
     case 'R':
-        double first;
-        double last;
-        double delta;
+        double sqrtFirst;
+        double sqrtLast;
+        double sqrtDelta;
         cout << "Please enter command parameters (sqrt: first, last, delta): " << endl;
-        cin >> first >> last >> delta;
+        cin >> sqrtFirst >> sqrtLast >> sqrtDelta;
         cout << "Square Root Values: " << endl;
-        findSqrtValue(first, last, delta);
+        findSqrtValue(sqrtFirst, sqrtLast, sqrtDelta);
+        break;
+    
+    case 'u':
+    case 'U':
+        double sqFirst;
+        double sqLast;
+        double sqDelta;
+        cout << "Please enter command parameters (square area: first, last, delta): " << endl;
+        cin >> sqFirst >> sqLast >> sqDelta;
+        cout << "Area of Square Values: " << endl;
+        areaSquare(sqFirst, sqLast, sqDelta);
         break;
 
     case 'q':
