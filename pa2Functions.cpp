@@ -31,6 +31,7 @@ double findSqrtValue(double first, double last, double delta){
     if (delta <= 0 || first > last){
         cout << "No computation needed." << endl;
     } else {
+        cout << "Square Root Values: " << endl;
         for (int i = 0; i < ENTRIES; i++){
             double calc = first + (delta * i);
             if (calc <= last){    
@@ -47,6 +48,7 @@ double areaSquare (double first, double last, double delta){
     if (delta <= 0 || first > last){
         cout << "No computation needed." << endl;
     } else {
+        cout << "Area of Square Values: " << endl;
         for (int i = 0; i < ENTRIES; i++){
             double calc = first + (delta * i);
             if (calc <= last){
@@ -64,8 +66,8 @@ double areaCircle (double first, double last, double delta){
     if (delta <= 0 || first > last){
         cout << "No computation needed." << endl;
     } else {
-        for (int i = 0; i < ENTRIES; i++)
-        {
+        cout << "Area of Circle Values: " << endl;
+        for (int i = 0; i < ENTRIES; i++){
             double calc = first + (delta * i);
             if (calc <= last)
             {
@@ -85,15 +87,16 @@ int findNextEvenValue(int first, int last){
     {
         cout << "No computation needed." << endl;
     } else {
-        for (int i = first; i < last; i++)
-        {
-            if (i % 2 == 0){
-                cout << i << endl;
+        cout << "Even numbers between " << first << " and " << last << ": " << endl;
+        for (int i = 0; i < ENTRIES; i++){
+            if (first <= last && first % 2 == 0){
+                cout << first << endl;
+                first += 1;
             } else {
-                break;
+                first += 1;
+                i--;
             }
         }
-        
     }
     return 0;
 }

@@ -40,7 +40,6 @@ int main()
         double sqrtDelta;
         cout << "Please enter command parameters (sqrt: first, last, delta): " << endl;
         cin >> sqrtFirst >> sqrtLast >> sqrtDelta;
-        cout << "Square Root Values: " << endl;
         findSqrtValue(sqrtFirst, sqrtLast, sqrtDelta);
         break;
     
@@ -51,7 +50,6 @@ int main()
         double sqDelta;
         cout << "Please enter command parameters (square area: first, last, delta): " << endl;
         cin >> sqFirst >> sqLast >> sqDelta;
-        cout << "Area of Square Values: " << endl;
         areaSquare(sqFirst, sqLast, sqDelta);
         break;
     
@@ -62,7 +60,6 @@ int main()
         double cirDelta;
         cout << "Please enter command parameters (circle area: first, last, delta): " << endl;
         cin >> cirFirst >> cirLast >> cirDelta;
-        cout << "Area of Circle Values: " << endl;
         areaCircle(cirFirst, cirLast, cirDelta);
         break;
 
@@ -72,7 +69,6 @@ int main()
         int evenLast;
         cout << "Please enter command parameters (even numbers: first, last): " << endl;
         cin >> evenFirst >> evenLast;
-        cout << "Even numbers between " << evenFirst << " and " << evenLast << ": " << endl;
         findNextEvenValue(evenFirst, evenLast);
         break;
 
