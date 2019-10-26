@@ -54,6 +54,27 @@ int main()
         cout << "Area of Square Values: " << endl;
         areaSquare(sqFirst, sqLast, sqDelta);
         break;
+    
+    case 'c':
+    case 'C':
+        double cirFirst;
+        double cirLast;
+        double cirDelta;
+        cout << "Please enter command parameters (circle area: first, last, delta): " << endl;
+        cin >> cirFirst >> cirLast >> cirDelta;
+        cout << "Area of Circle Values: " << endl;
+        areaCircle(cirFirst, cirLast, cirDelta);
+        break;
+
+    case 'e':
+    case 'E':
+        int evenFirst;
+        int evenLast;
+        cout << "Please enter command parameters (even numbers: first, last): " << endl;
+        cin >> evenFirst >> evenLast;
+        cout << "Even numbers between " << evenFirst << " and " << evenLast << ": " << endl;
+        findNextEvenValue(evenFirst, evenLast);
+        break;
 
     case 'q':
     case 'Q':

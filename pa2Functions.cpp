@@ -41,20 +41,59 @@ double findSqrtValue(double first, double last, double delta){
         }
     }
     return 0;
- }
+}
 
- double areaSquare (double first, double last, double delta){
-     if (delta <= 0 || first > last){
-         cout << "No computation needed." << endl;
-     } else {
-         for (int i = 0; i < ENTRIES; i++){
+double areaSquare (double first, double last, double delta){
+    if (delta <= 0 || first > last){
+        cout << "No computation needed." << endl;
+    } else {
+        for (int i = 0; i < ENTRIES; i++){
             double calc = first + (delta * i);
             if (calc <= last){
                 cout << (calc * calc) << endl;
             } else {
                 break;
             }
-         }
-     }
+        }
+    }
     return 0;
- }
+}
+
+double areaCircle (double first, double last, double delta){
+    const double pi = 3.14159;
+    if (delta <= 0 || first > last){
+        cout << "No computation needed." << endl;
+    } else {
+        for (int i = 0; i < ENTRIES; i++)
+        {
+            double calc = first + (delta * i);
+            if (calc <= last)
+            {
+                cout << pi * (calc * calc) << endl;
+            } else {
+                break;
+            }
+            
+        }
+        
+    }
+    return 0;
+}
+
+int findNextEvenValue(int first, int last){
+    if (first > last)
+    {
+        cout << "No computation needed." << endl;
+    } else {
+        for (int i = first; i < last; i++)
+        {
+            if (i % 2 == 0){
+                cout << i << endl;
+            } else {
+                break;
+            }
+        }
+        
+    }
+    return 0;
+}

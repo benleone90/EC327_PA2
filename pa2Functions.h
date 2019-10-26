@@ -13,4 +13,8 @@ double findSqrtValue(double, double, double);
 
 double areaSquare (double, double, double);
 
+double areaCircle (double, double, double);
+
+int findNextEvenValue(int, int);
+
 #endif
