@@ -17,4 +17,14 @@ double areaCircle (double, double, double);
 
 int findNextEvenValue(int, int);
 
+double lucky(double, double, double);
+
+double doMath(double, double, double, char);
+
+double naturalLog(double, double, double);
+
+double findNyanCatValue(double, double, double);
+
+int findNextOddValue(int, int);
+
 #endif
