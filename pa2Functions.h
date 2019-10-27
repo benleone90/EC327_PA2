@@ -5,6 +5,8 @@ extern const int ENTRIES;
 
 void initialize();
 
+bool checkCode (char);
+
 int factorial(int);
 
 int fibonacci(int);

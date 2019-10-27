@@ -10,6 +10,30 @@ void initialize(){
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 }
 
+bool checkCode (char command){
+    if (command == 'f' || command == 'F' ||
+        command == 'b' || command == 'B' ||
+        command == 'r' || command == 'R' ||
+        command == 'u' || command == 'U' ||
+        command == 'c' || command == 'C' ||
+        command == 'k' || command == 'K' ||
+        command == 's' || command == 'S' ||
+        command == 'n' || command == 'N' ||
+        command == 'x' || command == 'X' ||
+        command == 'l' || command == 'L' ||
+        command == 'y' || command == 'Y' ||
+        command == 'd' || command == 'D' ||
+        command == 'i' || command == 'I' ||
+        command == 'o' || command == 'O' ||
+        command == 'q' || command == 'Q'
+    ){
+        return true;
+    } else {
+        cout << "Invalid command code. Please try again." << endl;
+        return false;
+    }
+}
+
 int factorial(int n){
     if (n == 0) {
         return 1;

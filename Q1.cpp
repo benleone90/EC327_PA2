@@ -17,6 +17,8 @@ int main()
     cout << "Please enter command code: ";
     cin >> command;
 
+    checkCode(command);
+
     switch (command){
     case 'f':
     case 'F':
@@ -114,10 +116,6 @@ int main()
     case 'Q':
         cout << "Thank you for using this awesome program! It's an A+ ;)";
         run = false;
-        break;
-
-    default:
-        cout << "Invalid command code!" << endl;
         break;
     }
     }
