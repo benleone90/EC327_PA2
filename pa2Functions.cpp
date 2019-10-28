@@ -100,7 +100,7 @@ bool checkCode (char command){
         return true;
     }
      else if( command == 'q' || command == 'Q'){
-        cout << "Thank you for using this awesome program! It's an A+ ;)";
+        cout << "Thank you for using this awesome program! It's an A+ ;)" << endl;
         run = false;
         return true;
 
