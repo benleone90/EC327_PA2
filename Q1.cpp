@@ -11,8 +11,7 @@ const int ENTRIES = 10;
 bool run = true;
 string userInput;
 ifstream inFile;
-char* oper;
-int params;
+string oper;
 
 int main()
 {
@@ -39,7 +38,8 @@ int main()
             } else {
                 cout << userInput << " file is open!" << endl;
                 inFile >> oper;
-                readDataFromFile(oper);
+                //cout << oper;
+                readDataFromFile(oper.c_str());
             }
             break;
         

@@ -316,4 +316,5 @@ int findNextOddValue(int first, int last){
 
 void readDataFromFile(const char* input){
     checkCode(*input);
+    
 }

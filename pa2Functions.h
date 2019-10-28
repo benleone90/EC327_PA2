@@ -3,8 +3,6 @@
 
 extern const int ENTRIES;
 extern bool run;
-extern char* oper;
-extern int params;
 
 void initialize();
 
