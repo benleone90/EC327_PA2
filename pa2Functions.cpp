@@ -2,8 +2,11 @@
 #include <cmath>
 #include <ctime>
 #include <cstdlib>
+#include <fstream>
+#include <string>
 #include "pa2Functions.h"
 using namespace std;
+
 
 void initialize(){
     cout << "EC327: Introduction to Software Engineering\nFall 2019\nProgramming Assignment 2\nValue of Entries is: " << ENTRIES << endl;
@@ -11,24 +14,96 @@ void initialize(){
 }
 
 bool checkCode (char command){
-    if (command == 'f' || command == 'F' ||
-        command == 'b' || command == 'B' ||
-        command == 'r' || command == 'R' ||
-        command == 'u' || command == 'U' ||
-        command == 'c' || command == 'C' ||
-        command == 'k' || command == 'K' ||
-        command == 's' || command == 'S' ||
-        command == 'n' || command == 'N' ||
-        command == 'x' || command == 'X' ||
-        command == 'l' || command == 'L' ||
-        command == 'y' || command == 'Y' ||
-        command == 'd' || command == 'D' ||
-        command == 'i' || command == 'I' ||
-        command == 'o' || command == 'O' ||
-        command == 'q' || command == 'Q'
-    ){
+    if (command == 'f' || command == 'F'){
+        int fact;
+        cout << "Please enter command parameters (factorial): ";
+        cin >> fact;
+        cout << "Factorial of " << fact << " is " << factorial(fact) << endl;
         return true;
-    } else {
+
+    } else if (command == 'b' || command == 'B'){
+        int index;
+        cout << "Please enter command parameters (Fibonacci: index): ";
+        cin >> index;
+        cout << "Fibonacci number at index " << index << " is " << fibonacci(index) << endl;
+        return true;
+
+    } else if (command == 'r' || command == 'R'){
+        double sqrtFirst, sqrtLast, sqrtDelta;
+        cout << "Please enter command parameters (sqrt: first, last, delta): " << endl;
+        cin >> sqrtFirst >> sqrtLast >> sqrtDelta;
+        findSqrtValue(sqrtFirst, sqrtLast, sqrtDelta);
+        return true;
+
+    } else if (command == 'u' || command == 'U'){
+        double sqFirst, sqLast, sqDelta;
+        cout << "Please enter command parameters (square area: first, last, delta): " << endl;
+        cin >> sqFirst >> sqLast >> sqDelta;
+        areaSquare(sqFirst, sqLast, sqDelta);
+        return true;
+
+    } else if (command == 'c' || command == 'C'){
+        double cirFirst, cirLast, cirDelta;
+        cout << "Please enter command parameters (circle area: first, last, delta): " << endl;
+        cin >> cirFirst >> cirLast >> cirDelta;
+        areaCircle(cirFirst, cirLast, cirDelta);
+        return true;
+
+    } else if (command == 'e' || command == 'E'){
+        int evenFirst, evenLast;
+        cout << "Please enter command parameters (even numbers: first, last): " << endl;
+        cin >> evenFirst >> evenLast;
+        findNextEvenValue(evenFirst, evenLast);
+        return true;
+
+    } else if (command == 'k' || command == 'K'){
+        int luckyFirst, luckyLast, luckyDelta;
+        cout << "Please enter command parameters (lucky number: first, last, delta): " << endl;
+        cin >> luckyFirst >> luckyLast >> luckyDelta;
+        lucky(luckyFirst, luckyLast, luckyDelta);
+        return true;
+
+    } else if (command == 's' || command == 'S' || command == 'n' || command == 'N' || command == 'x' || command == 'X'){
+        double mathFirst, mathLast, mathDelta;
+        cout << "Please enter command parameters (" << command << " command: first, last, delta): " << endl;
+        cin >> mathFirst >> mathLast >> mathDelta;
+        doMath(mathFirst, mathLast, mathDelta, command);
+        return true;
+
+    } else if (command == 'l' || command == 'L'){
+        double logFirst, logLast, logDelta;
+        cout << "Please enter command parameters (natural logs: first, last, delta): " << endl;
+        cin >> logFirst >> logLast >> logDelta;
+        naturalLog(logFirst, logLast, logDelta);
+        return true;
+
+    } else if (command == 'y' || command == 'Y'){
+        double nyanFirst, nyanLast, nyanDelta;
+        cout << "Please enter command parameters (nyan cat: first, last, delta): " << endl;
+        cin >> nyanFirst >> nyanLast >> nyanDelta;
+        findNyanCatValue(nyanFirst, nyanLast, nyanDelta);
+        return true;
+
+    } else if (command == 'd' || command == 'D'){
+        int oddFirst, oddLast;
+        cout << "Please enter command parameters (odd numbers: first, last): " << endl;
+        cin >> oddFirst >> oddLast;
+        findNextOddValue(oddFirst, oddLast);
+        return true;
+
+    } else if (command == 'i' || command == 'I'){
+        return true;
+
+    } else if (command == 'o' || command == 'O'){
+        return true;
+        
+    }
+     else if( command == 'q' || command == 'Q'){
+        cout << "Thank you for using this awesome program! It's an A+ ;)";
+        run = false;
+        return true;
+
+     } else {
         cout << "Invalid command code. Please try again." << endl;
         return false;
     }
@@ -88,7 +163,7 @@ double areaSquare (double first, double last, double delta){
 }
 
 double areaCircle (double first, double last, double delta){
-    const float pi = 3.14159;
+    const double pi = 3.14159;
     if (delta <= 0 || first > last){
         cout << "No computation needed." << endl;
     } else {
@@ -236,4 +311,8 @@ int findNextOddValue(int first, int last){
         }
     }
     return 0;
+}
+
+void readDataFromFile(const char* input){
+    
 }

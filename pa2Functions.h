@@ -2,6 +2,7 @@
 #define pa2Functions
 
 extern const int ENTRIES;
+extern bool run;
 
 void initialize();
 
@@ -28,5 +29,7 @@ double naturalLog(double, double, double);
 double findNyanCatValue(double, double, double);
 
 int findNextOddValue(int, int);
+
+void readDataFromFile(const char *);
 
 #endif
