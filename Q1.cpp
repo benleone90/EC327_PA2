@@ -9,6 +9,10 @@ using namespace std;
 
 const int ENTRIES = 10;
 bool run = true;
+string userInput;
+ifstream inFile;
+char* oper;
+int params;
 
 int main()
 {
@@ -21,6 +25,27 @@ int main()
         cin >> command;
 
         checkCode(command);
+
+        switch (command)
+        {
+        case 'i':
+        case 'I':
+            cout << "Please input name of file: " << endl;
+            cin >> userInput;
+            inFile.open(userInput);
+            if (!inFile){
+                cerr << userInput << " file does not exist!" << endl;
+                break;
+            } else {
+                cout << userInput << " file is open!" << endl;
+                inFile >> oper;
+                readDataFromFile(oper);
+            }
+            break;
+        
+        default:
+            break;
+        }
     }
     return 0;
 }

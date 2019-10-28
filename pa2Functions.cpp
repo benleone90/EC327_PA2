@@ -6,6 +6,8 @@
 #include <string>
 #include "pa2Functions.h"
 using namespace std;
+extern string userInput;
+extern ifstream inFile;
 
 
 void initialize(){
@@ -93,10 +95,9 @@ bool checkCode (char command){
 
     } else if (command == 'i' || command == 'I'){
         return true;
-
+        
     } else if (command == 'o' || command == 'O'){
         return true;
-        
     }
      else if( command == 'q' || command == 'Q'){
         cout << "Thank you for using this awesome program! It's an A+ ;)";
@@ -314,5 +315,5 @@ int findNextOddValue(int first, int last){
 }
 
 void readDataFromFile(const char* input){
-    
+    checkCode(*input);
 }

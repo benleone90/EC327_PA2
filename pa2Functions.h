@@ -3,6 +3,8 @@
 
 extern const int ENTRIES;
 extern bool run;
+extern char* oper;
+extern int params;
 
 void initialize();
 
@@ -30,6 +32,6 @@ double findNyanCatValue(double, double, double);
 
 int findNextOddValue(int, int);
 
-void readDataFromFile(const char *);
+void readDataFromFile(const char*);
 
 #endif
