@@ -67,7 +67,7 @@ int main ()
         cout << "Entry " << i << " is: ";
         cin >> list[i];
     }
-    
+    cout << "-----------------" << endl;
     cout << "Original array is: ";
     for (int i = 0; i < size; i++){
         cout << list[i] << " ";

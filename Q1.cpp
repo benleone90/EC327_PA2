@@ -9,6 +9,7 @@ using namespace std;
 
 const int ENTRIES = 10;
 bool run = true;
+string fileName;
 string userInput;
 ifstream inFile;
 ofstream outFile;
@@ -16,7 +17,6 @@ char oper;
 
 int main()
 {
-    string fileName;
     initialize();
     while (run){
         char command;

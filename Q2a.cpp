@@ -3,9 +3,7 @@ using namespace std;
 
 //Recursive function to find GCD of two positive integers
 int gcd(int m, int n){
-    if (m <= 0 || n <= 0){
-        cout << "Invalid input. Must be positive integers." << endl;
-    } else if (m % n == 0){
+    if (m % n == 0){
         return n;
     }
     else {
@@ -24,6 +22,11 @@ int main()
         cin >> m;
         cout << "Enter n: ";
         cin >> n;
+        //Input check to ensure m and/or m are non-zero
+        if (m <= 0 || n <= 0){
+        cout << "Invalid input. Must be positive integers." << endl;
+        break;
+        }
         cout << "GCD is: " << gcd (m, n) << endl;
     }
     return 0;
