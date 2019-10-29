@@ -32,4 +32,6 @@ int findNextOddValue(int, int);
 
 void readDataFromFile(const char*);
 
+void writeDataToFile(const char*);
+
 #endif

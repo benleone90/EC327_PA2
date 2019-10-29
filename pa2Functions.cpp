@@ -8,6 +8,9 @@
 using namespace std;
 extern string userInput;
 extern ifstream inFile;
+extern ofstream outFile;
+extern char oper;
+
 
 
 void initialize(){
@@ -97,6 +100,9 @@ bool checkCode (char command){
         return true;
         
     } else if (command == 'o' || command == 'O'){
+        cout << "Please input name of file to be written to (ending with .txt): " << endl;
+        cin >> userInput;
+        writeDataToFile(userInput.c_str());
         return true;
     }
      else if( command == 'q' || command == 'Q'){
@@ -315,6 +321,85 @@ int findNextOddValue(int first, int last){
 }
 
 void readDataFromFile(const char* input){
-    checkCode(*input);
+    inFile.open(input);
+    if (!inFile){
+        cerr << input << " file does not exist!" << endl;
+    } else {
+        cout << input << " file is open!" << endl;
+        while(inFile >> oper){
+            if (oper == 'f' || oper == 'F'){   
+                int n;
+                inFile >> n;
+                cout << factorial(n) << endl;
+
+            } else if (oper == 'b' || oper == 'B'){
+                int index;
+                inFile >> index;
+                cout << fibonacci(index) << endl;
+
+            } else if (oper == 'r' || oper == 'R'){
+                double sqrtFirst, sqrtLast, sqrtDelta;
+                inFile >> sqrtFirst >> sqrtLast >> sqrtDelta;
+                cout << findSqrtValue(sqrtFirst, sqrtLast, sqrtDelta) << endl;
+
+            } else if (oper == 'u' || oper == 'U'){
+                double sqFirst, sqLast, sqDelta;
+                inFile >> sqFirst >> sqLast >> sqDelta;
+                cout << areaSquare(sqFirst, sqLast, sqDelta) << endl;
+
+            } else if (oper == 'c' || oper == 'C'){
+                double cirFirst, cirLast, cirDelta;
+                inFile >> cirFirst >> cirLast >> cirDelta;
+                cout << areaCircle(cirFirst, cirLast, cirDelta) << endl;
+
+            } else if (oper == 'e' || oper == 'E'){
+                int evenFirst, evenLast;
+                inFile >> evenFirst >> evenLast;
+                cout << findNextEvenValue(evenFirst, evenLast) << endl;
+
+            } else if (oper == 'k' || oper == 'K'){
+                int luckyFirst, luckyLast, luckyDelta;
+                inFile >> luckyFirst >> luckyLast >> luckyDelta;
+                cout << lucky(luckyFirst, luckyLast, luckyDelta) << endl;
+
+            } else if (oper == 's' || oper == 'S' || oper == 'n' || oper == 'N' || oper == 'x' || oper == 'X'){
+                double mathFirst, mathLast, mathDelta;
+                inFile >> mathFirst >> mathLast >> mathDelta;
+                cout << doMath(mathFirst, mathLast, mathDelta, oper) << endl;
+
+            } else if (oper == 'l' || oper == 'L'){
+                double logFirst, logLast, logDelta;
+                inFile >> logFirst >> logLast >> logDelta;
+                cout << naturalLog(logFirst, logLast, logDelta);
+
+            } else if (oper == 'y' || oper == 'Y'){
+                double nyanFirst, nyanLast, nyanDelta;
+                inFile >> nyanFirst >> nyanLast >> nyanDelta;
+                cout << findNyanCatValue(nyanFirst, nyanLast, nyanDelta) << endl;
+
+            } else if (oper == 'd' || oper == 'D'){
+                int oddFirst, oddLast;
+                inFile >> oddFirst >> oddLast;
+                cout << findNextOddValue(oddFirst, oddLast) << endl;
+            }
+        }
+    }
+    inFile.close();
+}
+
+void writeDataToFile(const char* input){
+    outFile.open(input);
+    if (!outFile){
+        cerr << "There was a problem creating your file!" << endl;
+    } else {
+        cout << input << " was successfully created and is open!" << endl;
+        char command;
     
+        cout << "Please enter command code: ";
+        cin >> command;
+
+        checkCode(command);
+
+        outFile.close();
+    }
 }

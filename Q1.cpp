@@ -11,7 +11,8 @@ const int ENTRIES = 10;
 bool run = true;
 string userInput;
 ifstream inFile;
-string oper;
+ofstream outFile;
+char oper;
 
 int main()
 {
@@ -31,16 +32,7 @@ int main()
         case 'I':
             cout << "Please input name of file: " << endl;
             cin >> userInput;
-            inFile.open(userInput);
-            if (!inFile){
-                cerr << userInput << " file does not exist!" << endl;
-                break;
-            } else {
-                cout << userInput << " file is open!" << endl;
-                inFile >> oper;
-                //cout << oper;
-                readDataFromFile(oper.c_str());
-            }
+            readDataFromFile(userInput.c_str());            
             break;
         
         default:
